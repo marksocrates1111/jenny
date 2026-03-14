@@ -6,5 +6,13 @@
     "message": "Hello, i need help.",
     "status": "sent-to-intercom",
     "createdAt": "2026-03-14T11:40:24.801Z"
+  },
+  {
+    "id": "577202e6-e741-450e-813a-036ebaae1983",
+    "name": "Jenny",
+    "email": "jenny+vercelpatch@gmail.com",
+    "message": "post-vercel-fix check 2026-03-14T19:54:36",
+    "status": "sent-to-intercom",
+    "createdAt": "2026-03-14T11:54:36.510Z"
   }
 ]

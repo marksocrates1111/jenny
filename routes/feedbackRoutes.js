@@ -14,21 +14,43 @@ const {
 const router = express.Router();
 const DATA_FILE = path.join(__dirname, '..', 'data', 'feedback.json');
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+let memoryRecords = [];
+
+function isStorageError(error) {
+  if (!error || !error.code) {
+    return false;
+  }
+
+  return ['ENOENT', 'EROFS', 'EACCES', 'EPERM'].includes(error.code);
+}
 
 async function readFeedbackRecords() {
   try {
     const data = await fs.readFile(DATA_FILE, 'utf8');
-    return JSON.parse(data || '[]');
+    const parsed = JSON.parse(data || '[]');
+    memoryRecords = Array.isArray(parsed) ? parsed : [];
+    return memoryRecords;
   } catch (error) {
-    if (error.code === 'ENOENT') {
-      return [];
+    if (isStorageError(error)) {
+      // Vercel serverless functions can have non-writable storage. Fall back to memory.
+      return [...memoryRecords];
     }
     throw error;
   }
 }
 
 async function writeFeedbackRecords(records) {
-  await fs.writeFile(DATA_FILE, JSON.stringify(records, null, 2), 'utf8');
+  memoryRecords = Array.isArray(records) ? [...records] : [];
+
+  try {
+    await fs.writeFile(DATA_FILE, JSON.stringify(memoryRecords, null, 2), 'utf8');
+    return true;
+  } catch (error) {
+    if (isStorageError(error)) {
+      return false;
+    }
+    throw error;
+  }
 }
 
 router.post('/', async (req, res) => {
@@ -62,7 +84,10 @@ router.post('/', async (req, res) => {
 
     // Save locally first so we always keep a copy
     records.push(newRecord);
-    await writeFeedbackRecords(records);
+    const savedBeforeSync = await writeFeedbackRecords(records);
+    if (!savedBeforeSync) {
+      console.warn('Local feedback persistence unavailable; using in-memory fallback for this runtime.');
+    }
 
     // Then try to sync with Intercom
     const intercomResult = await sendFeedbackToIntercom(newRecord);
@@ -81,7 +106,10 @@ router.post('/', async (req, res) => {
       });
     }
 
-    await writeFeedbackRecords(records);
+    const savedAfterSync = await writeFeedbackRecords(records);
+    if (!savedAfterSync) {
+      console.warn('Local feedback status update could not be persisted to disk; memory fallback active.');
+    }
 
     return res.status(201).json({
       message: 'Feedback submitted successfully.',
