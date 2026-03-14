@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JENNY | Support</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="feedback">
+    <div class="page-cinematic-bg" aria-hidden="true">
+      <video class="cinematic-video" autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4" />
+      </video>
+      <div class="cinematic-layer cinematic-layer-a"></div>
+      <div class="cinematic-layer cinematic-layer-b"></div>
+      <div class="cinematic-vignette"></div>
+    </div>
+
+    <header class="cinematic-header">
+      <a class="cinematic-logo" href="index.html">JENNY</a>
+      <nav class="cinematic-nav">
+        <a href="index.html">Home</a>
+        <a class="active" href="feedback.html">Support Chat</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+    </header>
+
+    <main class="container themed-main">
+      <section class="form-layout">
+        <article class="card float-in">
+          <h2>Support / Feedback Form</h2>
+          <p>Enter your details and message below.</p>
+
+          <form id="feedbackForm" class="form-grid">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Jane Doe" required />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="jane@email.com" required />
+
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="6"
+              placeholder="Tell us what happened or what feedback you have..."
+              required
+            ></textarea>
+
+            <button class="btn" type="submit">Send Message</button>
+          </form>
+
+          <p id="formStatus" class="status-text" aria-live="polite"></p>
+        </article>
+
+        <aside class="card rise-in help-card">
+          <h3>Need Help?</h3>
+          <p>Use this form to send a direct support message.</p>
+          <p>Once submitted, your request is synced to Intercom and visible in the admin panel.</p>
+        </aside>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

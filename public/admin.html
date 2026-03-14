@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JENNY | Admin</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="admin">
+    <div class="page-cinematic-bg" aria-hidden="true">
+      <video class="cinematic-video" autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4" />
+      </video>
+      <div class="cinematic-layer cinematic-layer-a"></div>
+      <div class="cinematic-layer cinematic-layer-b"></div>
+      <div class="cinematic-vignette"></div>
+    </div>
+
+    <div id="adminLoginWall" class="admin-login-wall">
+      <form id="adminLoginForm" class="card admin-login-card">
+        <h2>Admin Access</h2>
+        <p>Enter the admin password to continue.</p>
+
+        <label for="adminPassword">Password</label>
+        <input id="adminPassword" name="adminPassword" type="password" required />
+
+        <button class="btn" type="submit">Enter Admin Panel</button>
+        <p id="adminLoginStatus" class="status-text muted" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <header class="cinematic-header">
+      <a class="cinematic-logo" href="index.html">JENNY</a>
+      <nav class="cinematic-nav">
+        <a href="index.html">Home</a>
+        <a href="feedback.html">Support</a>
+        <a class="active" href="admin.html">Admin</a>
+      </nav>
+    </header>
+
+    <main id="adminContent" class="container themed-main hidden">
+      <section class="card float-in">
+        <div class="admin-header">
+          <h2>Submitted Feedback Records</h2>
+          <div class="action-row">
+            <button id="refreshBtn" class="btn" type="button">Refresh</button>
+          </div>
+        </div>
+
+        <p id="intercomStatus" class="status-text" aria-live="polite"></p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Status</th>
+                <th>Created At</th>
+              </tr>
+            </thead>
+            <tbody id="feedbackTableBody"></tbody>
+          </table>
+        </div>
+
+        <p id="adminStatus" class="status-text muted" aria-live="polite"></p>
+      </section>
+
+      <section class="card rise-in">
+        <div class="admin-header">
+          <h2>Intercom Live Conversations</h2>
+          <div class="action-row">
+            <button id="refreshConversationsBtn" class="btn" type="button">Refresh Conversations</button>
+          </div>
+        </div>
+
+        <section class="mailbox-wrap">
+          <aside class="mailbox-sidebar">
+            <h3>Inbox</h3>
+            <div id="mailboxList" class="mailbox-list"></div>
+          </aside>
+
+          <article class="mailbox-thread">
+            <div id="mailboxThreadHeader" class="mailbox-thread-header">Select a conversation from Inbox.</div>
+            <div id="messageThread" class="message-thread"></div>
+
+            <form id="threadReplyForm" class="thread-reply-form">
+              <textarea
+                id="threadReplyMessage"
+                name="threadReplyMessage"
+                rows="3"
+                placeholder="Type your admin reply..."
+                required
+              ></textarea>
+              <button id="threadReplySendBtn" class="btn" type="submit">Send Reply</button>
+            </form>
+            <p id="threadReplyStatus" class="status-text muted" aria-live="polite"></p>
+          </article>
+        </section>
+
+        <p id="conversationStatus" class="status-text muted" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

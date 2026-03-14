@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JENNY</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="home">
+    <div id="introGate" class="intro-gate">
+      <div class="intro-core">
+        <button id="jennyEnterBtn" class="jenny-enter-btn" type="button">JENNY</button>
+        <p id="introStatus" class="intro-status">Tap to initialize experience</p>
+      </div>
+    </div>
+
+    <div class="cinematic-bg" aria-hidden="true">
+      <video id="landingVideo" class="cinematic-video" muted loop playsinline preload="metadata">
+        <source src="video.mp4" type="video/mp4" />
+      </video>
+      <div class="cinematic-layer cinematic-layer-a"></div>
+      <div class="cinematic-layer cinematic-layer-b"></div>
+      <div class="cinematic-layer cinematic-layer-c"></div>
+      <div class="cinematic-vignette"></div>
+    </div>
+
+    <audio id="landingAudio" src="audio.mp3" loop preload="auto"></audio>
+
+    <header class="cinematic-header">
+      <a class="cinematic-logo" href="index.html">JENNY</a>
+      <nav class="cinematic-nav">
+        <a class="active" href="index.html">Home</a>
+        <a href="feedback.html">Support</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+    </header>
+
+    <main class="cinematic-main">
+      <section class="cinematic-hero float-in">
+        <p class="cinematic-kicker">LIVE CUSTOMER SUPPORT</p>
+        <h1>JENNY</h1>
+        <p class="cinematic-subtitle">
+          Fast support conversations, clean experience, direct connection.
+        </p>
+
+        <div class="cinematic-buttons">
+          <a class="cinematic-btn" href="feedback.html">Open Support Chat</a>
+          <a class="cinematic-btn cinematic-btn-ghost" href="admin.html">Open Admin Panel</a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cinematic-social" aria-label="Quick links">
+      <a href="feedback.html" title="Support">S</a>
+      <a href="admin.html" title="Admin">A</a>
+      <a href="index.html" title="Home">H</a>
+    </aside>
+
+    <script src="script.js"></script>
+  </body>
+</html>

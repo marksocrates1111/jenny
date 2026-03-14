@@ -1,0 +1,21 @@
+{
+  "name": "realtime-feedback-messenger",
+  "version": "1.0.0",
+  "description": "Basic student-friendly feedback messenger using Node, Express, and Intercom API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "feedback",
+    "express",
+    "intercom"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
