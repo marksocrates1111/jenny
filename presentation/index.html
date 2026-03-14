@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JENNY Presentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-a" aria-hidden="true"></div>
+    <div class="bg-orb orb-b" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div id="particleField" class="particle-field" aria-hidden="true"></div>
+
+    <header class="hud">
+      <div class="hud-title">JENNY Real-Time Feedback Messenger</div>
+      <div class="hud-meta">
+        <span id="slideCounter">01 / 11</span>
+      </div>
+      <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+    </header>
+
+    <aside class="slide-dots" aria-label="Slide navigation">
+      <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+      <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+      <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+      <button class="dot" data-slide="3" aria-label="Slide 4"></button>
+      <button class="dot" data-slide="4" aria-label="Slide 5"></button>
+      <button class="dot" data-slide="5" aria-label="Slide 6"></button>
+      <button class="dot" data-slide="6" aria-label="Slide 7"></button>
+      <button class="dot" data-slide="7" aria-label="Slide 8"></button>
+      <button class="dot" data-slide="8" aria-label="Slide 9"></button>
+      <button class="dot" data-slide="9" aria-label="Slide 10"></button>
+      <button class="dot" data-slide="10" aria-label="Slide 11"></button>
+    </aside>
+
+    <main id="deck" class="deck" aria-live="polite">
+      <div id="slidesTrack" class="slides-track">
+        <section class="slide active">
+          <div class="glass card-xl">
+            <p class="eyebrow reveal">Integrative Programming and Technologies 1</p>
+            <h1 class="reveal">JENNY Real-Time Feedback Messenger</h1>
+            <p class="subtitle reveal">Colegio de Montalban | Institute of Computing Studies</p>
+            <div class="pill-row reveal">
+              <span>Frontend Developer</span>
+              <span>Backend Developer</span>
+              <span>API Integration Developer</span>
+              <span>UI/UX Designer</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <div class="glass card-xl">
+            <p class="eyebrow reveal">Slide 2 | Problem</p>
+            <h2 class="reveal">Support Tools Are Fragmented</h2>
+            <p class="subtitle reveal">
+              Many small teams miss customer feedback because feedback forms, chat tools,
+              and admin tracking systems are separate.
+            </p>
+            <div class="grid-two reveal">
+              <article class="glass mini-card">
+                <h3>This Leads To</h3>
+                <ul>
+                  <li>Missed messages</li>
+                  <li>Slow responses</li>
+                  <li>Scattered conversations</li>
+                </ul>
+              </article>
+              <article class="glass mini-card">
+                <h3>Target Users</h3>
+                <ul>
+                  <li>Small businesses</li>
+                  <li>Support teams</li>
+                  <li>Creators and startups</li>
+                  <li>Student demo projects</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <div class="glass card-xl">
+            <p class="eyebrow reveal">Slide 3 | Solution</p>
+            <h2 class="reveal">JENNY Real-Time Feedback Messenger</h2>
+            <p class="subtitle reveal">
+              A cinematic customer support website that captures feedback and synchronizes
+              messages with Intercom conversations.
+            </p>
+            <div class="workflow reveal">
+              <span>User submits feedback</span>
+              <span>Message saved locally</span>
+              <span>Backend syncs to Intercom API</span>
+              <span>Admin manages conversation from dashboard</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <div class="glass card-xl">
+            <p class="eyebrow reveal">Slide 4 | Technology Stack</p>
+            <h2 class="reveal">Built With Practical Web Technologies</h2>
+            <div class="grid-three reveal">
+              <article class="glass mini-card">
+                <h3>Frontend</h3>
+                <p>HTML<br />CSS<br />JavaScript</p>
+              </article>
+              <article class="glass mini-card">
+                <h3>Backend</h3>
+                <p>Node.js<br />Express.js</p>
+              </article>
+              <article class="glass mini-card">
+                <h3>External API</h3>
+                <p>Intercom REST API</p>
+              </article>
+              <article class="glass mini-card">
+                <h3>Storage</h3>
+                <p>feedback.json</p>
+              </article>
+              <article class="glass mini-card">
+                <h3>Deployment</h3>
+                <p>Vercel</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <div class="glass card-xl">
+            <p class="eyebrow reveal">Slide 5 | System Architecture</p>
+            <h2 class="reveal">End-to-End Architecture</h2>
+            <div class="arch-grid reveal">
+              <article class="glass mini-card">
+                <h3>Frontend</h3>
+                <ul>
+                  <li>Home page</li>
+                  <li>Feedback page</li>
+                  <li>Admin dashboard</li>
+                </ul>
+              </article>
+              <article class="glass mini-card">
+                <h3>Backend</h3>
+                <ul>
+                  <li>Express server</li>
+                  <li>API routes</li>
+                  <li>Intercom service</li>
+                </ul>
+              </article>
+              <article class="glass mini-card">
+                <h3>External System</h3>
+                <ul>
+                  <li>Intercom API</li>
+                </ul>
+              </article>
+            </div>
+            <p class="flow reveal">
+              User → Frontend → Backend → Local Storage<br />
+              Backend → Intercom API<br />
+              Admin Dashboard → Backend → Intercom Conversations
+            </p>
+          </div>
+        </section>
+
+        <section class="slide">
+          <div class="glass card-xl">
+            <p class="eyebrow reveal">Slide 6 | Integration Highlight</p>
+            <h2 class="reveal">Intercom API Integration Core</h2>
+            <div class="grid-two reveal">
+              <article class="glass mini-card">
+                <h3>Integration Flow</h3>
+                <ul>
+                  <li>User submits feedback</li>
+                  <li>Backend validates input</li>
+                  <li>Backend finds or creates Intercom contact</li>
+                  <li>Backend creates conversation</li>
+                  <li>Admin replies through dashboard</li>
+                </ul>
+              </article>
+              <article class="glass mini-card">
+                <h3>Challenges and Solutions</h3>
+                <ul>
+                  <li>API failures → Retry logic</li>
+                  <li>Missing contacts → Contact search fallback</li>
+                  <li>Message conflicts → Better backend logging</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <div class="glass card-xl">
+            <p class="eyebrow reveal">Slide 7 | Live Demo</p>
+            <h2 class="reveal">Live Demo Plan</h2>
+            <p class="subtitle reveal">Website: https://jenny-messenger.vercel.app/</p>
+            <div class="workflow reveal">
+              <span>Open homepage</span>
+              <span>Submit feedback</span>
+              <span>Show record in admin dashboard</span>
+              <span>Fetch Intercom conversation list</span>
+              <span>Open thread</span>
+              <span>Send admin reply</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <div class="glass card-xl">
+            <p class="eyebrow reveal">Slide 8 | Hero Code</p>
+            <h2 class="reveal">Example Intercom API Request</h2>
+            <div class="glass code-card reveal">
+              <pre><code>await axios.post(
+  `${INTERCOM_BASE_URL}/conversations`,
+  {
+    from: {
+      type: "contact",
+      id: contactId
+    },
+    body: message
+  },
+  {
+    headers: {
+      Authorization: `Bearer ${INTERCOM_ACCESS_TOKEN}`,
+      "Content-Type": "application/json"
+    }
+  }
+);</code></pre>
+            </div>
+            <p class="flow reveal">
+              Backend sends user message to Intercom<br />
+              Intercom creates a conversation<br />
+              Admin can reply through dashboard
+            </p>
+          </div>
+        </section>
+
+        <section class="slide">
+          <div class="glass card-xl">
+            <p class="eyebrow reveal">Slide 9 | Challenges</p>
+            <h2 class="reveal">Engineering Challenges and Fixes</h2>
+            <div class="grid-three reveal">
+              <article class="glass mini-card">
+                <h3>Intercom API failures</h3>
+                <p>Solution: Retry logic</p>
+              </article>
+              <article class="glass mini-card">
+                <h3>Missing contacts</h3>
+                <p>Solution: Search then create contact</p>
+              </article>
+              <article class="glass mini-card">
+                <h3>Vercel storage limitations</h3>
+                <p>Solution: Fallback logic and planned database upgrade</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <div class="glass card-xl">
+            <p class="eyebrow reveal">Slide 10 | Future Improvements</p>
+            <h2 class="reveal">Roadmap</h2>
+            <div class="grid-two reveal">
+              <article class="glass mini-card">
+                <h3>Real database</h3>
+                <ul>
+                  <li>MongoDB</li>
+                  <li>Supabase</li>
+                  <li>PostgreSQL</li>
+                </ul>
+              </article>
+              <article class="glass mini-card">
+                <h3>Real-time updates</h3>
+                <ul>
+                  <li>WebSockets</li>
+                  <li>Server Sent Events</li>
+                </ul>
+              </article>
+              <article class="glass mini-card">
+                <h3>Admin improvements</h3>
+                <ul>
+                  <li>Role-based accounts</li>
+                  <li>Multiple admins</li>
+                </ul>
+              </article>
+              <article class="glass mini-card">
+                <h3>Analytics</h3>
+                <ul>
+                  <li>Response tracking</li>
+                  <li>Sentiment analysis</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide">
+          <div class="glass card-xl">
+            <p class="eyebrow reveal">Slide 11 | Summary</p>
+            <h2 class="reveal">Key Takeaways</h2>
+            <p class="subtitle reveal">
+              JENNY Real-Time Feedback Messenger demonstrates API integration with Intercom,
+              backend architecture with Express, customer support workflow design,
+              and modern UI presentation.
+            </p>
+            <div class="glass mini-card reveal">
+              <h3>Key Achievement</h3>
+              <p>
+                A system that captures feedback, syncs with Intercom,
+                and allows admins to manage conversations from one dashboard.
+              </p>
+            </div>
+            <p class="closing reveal">Thank you.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
