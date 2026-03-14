@@ -19,6 +19,7 @@ app.get('/favicon.ico', (req, res) => {
 
 // Serve static frontend files
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/presentation', express.static(path.join(__dirname, 'presentation')));
 
 // Default route
 app.get('/', (req, res) => {
